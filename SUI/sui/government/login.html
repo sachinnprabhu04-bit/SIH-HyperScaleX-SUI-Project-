@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Government Login | SUI</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+
+</head>
+<body data-depth="1" style="background:var(--ink);">
+
+<div class="login-shell">
+  <div class="login-card">
+    <div class="lc-badge"><span data-icon="shield" style="width:30px;height:30px;display:inline-flex;vertical-align:-3px;"></span><div><h3 style="margin:0;">Government Portal</h3><p class="mono" style="margin:0;font-size:.7rem;color:var(--ink-faint);">STATE SOCIETAL INNOVATION COMMAND CENTER</p></div></div>
+    <form id="loginForm">
+      <div class="field"><label>Officer ID</label><input type="text" value="JH-VER-0417" required></div>
+      <div class="field"><label>District</label><select><option>Ranchi</option><option>Gumla</option><option>Khunti</option><option>Latehar</option></select></div>
+      <div class="field"><label>Password</label><input type="password" value="demo-access" required></div>
+      <button type="submit" class="btn btn-primary btn-block btn-lg">Sign in</button>
+    </form>
+    <div class="login-seal">For authorized verification officers only. Demo access enabled.</div>
+  </div>
+</div>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  window.location.href = "dashboard.html";
+});
+</script>
+
+<div class="toast-stack"></div>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/effects.js"></script>
+
+</body>
+</html>

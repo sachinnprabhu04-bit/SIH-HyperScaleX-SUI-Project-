@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact Analytics | SUI</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+
+</head>
+<body data-role="government" data-depth="1">
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/sui-logo.png" alt="SUI">
+      <div>
+        <div class="brand-word">SUI</div>
+        <div class="brand-sub">Societal Innovation<br>Interface</div>
+      </div>
+    </div>
+    <div class="role-switcher" id="roleSwitcher"></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class=""><span data-icon="dashboard"></span><span>Command Center</span></a>
+<a href="verification-queue.html" class=""><span data-icon="shield"></span><span>Verification Queue</span></a>
+<a href="certification.html" class=""><span data-icon="award"></span><span>Certification</span></a>
+<a href="impact-analytics.html" class="active"><span data-icon="barchart"></span><span>Impact Analytics</span></a>
+    </nav>
+    <div class="sidebar-foot">
+      <button class="switch-role-btn" data-cmdk-open type="button" style="margin-bottom:8px;"><span data-icon="search" style="width:13px;height:13px;"></span> Jump to a page (Ctrl K)</button>
+      <button class="switch-role-btn" data-reset-demo type="button"><span data-icon="clock" style="width:13px;height:13px;"></span> Reload example data</button>
+      <button class="switch-role-btn" data-reset-blank type="button" style="margin-top:6px;opacity:.7;font-size:.72rem;"><span data-icon="flag" style="width:12px;height:12px;"></span> Start from a blank slate</button>
+    </div>
+  </aside>
+  <div class="main-col">
+    <header class="topbar">
+      <div class="row gap-sm">
+        <button class="menu-toggle"></button>
+        <div class="topbar-title">
+          <span class="t-eyebrow">Government Portal</span>
+          <h1>Impact Analytics</h1>
+        </div>
+      </div>
+      <div class="row gap-sm">
+        
+        <button class="cmdk-trigger" data-cmdk-open type="button"><span data-icon="search" style="width:14px;height:14px;"></span><span class="cmdk-label">Search</span><kbd>Ctrl K</kbd></button>
+        <button class="icon-btn" data-open-modal="notifPanelOverlay" data-notif-role="government" type="button"><span class="dot" style="display:none;"></span><span data-icon="bell"></span></button>
+        <div class="icon-btn" title="Signed in as: District Verification Officer" style="width:auto;border-radius:999px;padding:0 14px;gap:8px;font-size:.78rem;font-weight:700;">
+          <span data-icon="shield" style="width:15px;height:15px;"></span> District Verification Officer
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="notifPanelOverlay">
+      <div class="modal" style="max-width:400px;">
+        <button class="modal-close" data-close-modal><span data-icon="close"></span></button>
+        <div class="eyebrow">Government Portal</div>
+        <h3 style="margin-bottom:16px;">Notifications</h3>
+        <div id="notifPanelList" class="stack-sm" data-notif-list="government" style="max-height:360px;overflow-y:auto;"></div>
+      </div>
+    </div>
+    <main class="content">
+      
+<div class="stack-lg">
+  <div class="card">
+    <div class="panel-title"><h3>Citizens impacted over time <span class="badge badge-neutral">Conceptual platform data</span></h3></div>
+    <div class="chart-box" style="height:240px;"><canvas id="impactLine"></canvas></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;" class="wrap">
+    <div class="card">
+      <div class="panel-title"><h3>University participation</h3></div>
+      <div class="chart-box" style="height:220px;"><canvas id="uniBar"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="panel-title"><h3>Industry CSR by sector</h3></div>
+      <div class="chart-box" style="height:220px;"><canvas id="csrBar"></canvas></div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  new Chart(document.getElementById("impactLine"), {
+    type: "line",
+    data: { labels: ["Apr","May","Jun","Jul","Aug","Sep"], datasets: [{ label: "Citizens impacted", data: [4200,5800,7100,9600,12400,15800], borderColor: "#BD5A2A", backgroundColor: "rgba(189,90,42,.12)", fill: true, tension: .35 }] },
+    options: { animation:{duration:1200,easing:"easeOutQuart"}, plugins:{legend:{display:false}}, scales:{ y:{ grid:{color:"#DECBA3"} }, x:{ grid:{display:false} } }, maintainAspectRatio:false }
+  });
+  new Chart(document.getElementById("uniBar"), {
+    type: "bar",
+    data: { labels: ["BIT Mesra","NIT Jamshedpur","IIT (ISM) Dhanbad","Xavier Institute"], datasets: [{ label: "Projects", data: [5,4,6,3], backgroundColor: "#1F3652", borderRadius: 4 }] },
+    options: { animation:{duration:1100,easing:"easeOutQuart"}, plugins:{legend:{display:false}}, scales:{ y:{ grid:{color:"#DECBA3"} }, x:{ grid:{display:false} } }, maintainAspectRatio:false }
+  });
+  new Chart(document.getElementById("csrBar"), {
+    type: "bar",
+    data: { labels: ["Urban Infra.","Agri. & Water","Healthcare","Education"], datasets: [{ label: "Rs. lakh", data: [18.5,12.2,9.8,6.4], backgroundColor: "#B8862E", borderRadius: 4 }] },
+    options: { animation:{duration:1100,easing:"easeOutQuart"}, plugins:{legend:{display:false}}, scales:{ y:{ grid:{color:"#DECBA3"} }, x:{ grid:{display:false} } }, maintainAspectRatio:false }
+  });
+});
+</script>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-stack"></div>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/effects.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  initRoleSwitcher([{"id": "citizen", "label": "Citizen", "icon": "flag", "color": "var(--green)", "href": "citizen/dashboard.html"}, {"id": "university", "label": "University", "icon": "university", "color": "var(--navy)", "href": "university/dashboard.html"}, {"id": "industry", "label": "Industry", "icon": "factory", "color": "var(--rust)", "href": "industry/dashboard.html"}, {"id": "government", "label": "Government", "icon": "shield", "color": "var(--gold)", "href": "government/login.html"}], "government", "../");
+  initCommandPalette([{"label": "Home", "group": "Public", "href": "index.html", "icon": "layers", "color": "var(--ink)"}, {"label": "Impact story", "group": "Public", "href": "shared/project-impact.html", "icon": "trending", "color": "var(--ink)"}, {"label": "Citizen dashboard", "group": "Citizen", "href": "citizen/dashboard.html", "icon": "dashboard", "color": "var(--green)"}, {"label": "Report a problem", "group": "Citizen", "href": "citizen/report-problem.html", "icon": "flag", "color": "var(--green)"}, {"label": "My reports", "group": "Citizen", "href": "citizen/my-reports.html", "icon": "list", "color": "var(--green)"}, {"label": "Citizen notifications", "group": "Citizen", "href": "citizen/notifications.html", "icon": "bell", "color": "var(--green)"}, {"label": "Government command center", "group": "Government", "href": "government/dashboard.html", "icon": "dashboard", "color": "var(--gold)"}, {"label": "Verification queue", "group": "Government", "href": "government/verification-queue.html", "icon": "shield", "color": "var(--gold)"}, {"label": "Certification", "group": "Government", "href": "government/certification.html", "icon": "award", "color": "var(--gold)"}, {"label": "Impact analytics", "group": "Government", "href": "government/impact-analytics.html", "icon": "barchart", "color": "var(--gold)"}, {"label": "University dashboard", "group": "University", "href": "university/dashboard.html", "icon": "dashboard", "color": "var(--navy)"}, {"label": "Challenge marketplace", "group": "University", "href": "university/challenge-marketplace.html", "icon": "map", "color": "var(--navy)"}, {"label": "Solution builder", "group": "University", "href": "university/solution-builder.html", "icon": "layers", "color": "var(--navy)"}, {"label": "Project control", "group": "University", "href": "university/project-control.html", "icon": "trending", "color": "var(--navy)"}, {"label": "Impact ranking", "group": "University", "href": "university/impact-ranking.html", "icon": "award", "color": "var(--navy)"}, {"label": "Industry dashboard", "group": "Industry", "href": "industry/dashboard.html", "icon": "dashboard", "color": "var(--rust)"}, {"label": "Solutions marketplace", "group": "Industry", "href": "industry/solutions-marketplace.html", "icon": "map", "color": "var(--rust)"}, {"label": "CSR opportunities", "group": "Industry", "href": "industry/csr-opportunities.html", "icon": "handshake", "color": "var(--rust)"}, {"label": "My projects", "group": "Industry", "href": "industry/my-projects.html", "icon": "briefcase", "color": "var(--rust)"}], "../");
+});
+</script>
+
+</body>
+</html>

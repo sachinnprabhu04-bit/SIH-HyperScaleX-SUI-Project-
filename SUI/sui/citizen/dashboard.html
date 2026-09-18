@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | SUI</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+
+</head>
+<body data-role="citizen" data-depth="1">
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/sui-logo.png" alt="SUI">
+      <div>
+        <div class="brand-word">SUI</div>
+        <div class="brand-sub">Societal Innovation<br>Interface</div>
+      </div>
+    </div>
+    <div class="role-switcher" id="roleSwitcher"></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="active"><span data-icon="dashboard"></span><span>Dashboard</span></a>
+<a href="report-problem.html" class=""><span data-icon="flag"></span><span>Report a Problem</span></a>
+<a href="my-reports.html" class=""><span data-icon="list"></span><span>My Reports</span></a>
+<a href="notifications.html" class=""><span data-icon="bell"></span><span>Notifications</span></a>
+    </nav>
+    <div class="sidebar-foot">
+      <button class="switch-role-btn" data-cmdk-open type="button" style="margin-bottom:8px;"><span data-icon="search" style="width:13px;height:13px;"></span> Jump to a page (Ctrl K)</button>
+      <button class="switch-role-btn" data-reset-demo type="button"><span data-icon="clock" style="width:13px;height:13px;"></span> Reload example data</button>
+      <button class="switch-role-btn" data-reset-blank type="button" style="margin-top:6px;opacity:.7;font-size:.72rem;"><span data-icon="flag" style="width:12px;height:12px;"></span> Start from a blank slate</button>
+    </div>
+  </aside>
+  <div class="main-col">
+    <header class="topbar">
+      <div class="row gap-sm">
+        <button class="menu-toggle"></button>
+        <div class="topbar-title">
+          <span class="t-eyebrow">Citizen Portal</span>
+          <h1>Dashboard</h1>
+        </div>
+      </div>
+      <div class="row gap-sm">
+        
+        <button class="cmdk-trigger" data-cmdk-open type="button"><span data-icon="search" style="width:14px;height:14px;"></span><span class="cmdk-label">Search</span><kbd>Ctrl K</kbd></button>
+        <a href="notifications.html" class="icon-btn" data-notif-role="citizen" style="text-decoration:none;"><span class="dot" style="display:none;"></span><span data-icon="bell"></span></a>
+        <div class="icon-btn" title="Reporting as: Meera Oraon" style="width:auto;border-radius:999px;padding:0 14px;gap:8px;font-size:.78rem;font-weight:700;">
+          <span data-icon="flag" style="width:15px;height:15px;"></span> Meera Oraon
+        </div>
+      </div>
+    </header>
+    
+    <main class="content">
+      
+<div class="stack-lg">
+  <div class="card card-accent" style="background:linear-gradient(120deg,var(--paper) 60%,var(--green-tint));">
+    <div class="row-between wrap gap-md">
+      <div style="max-width:520px;">
+        <h2 style="margin-bottom:8px;">Your voice can become a solution.</h2>
+        <p style="margin-bottom:0;">Report a real problem near you and follow it through verification, university competition, industry funding and government certification, all in the open.</p>
+      </div>
+      <div class="row gap-sm">
+        <a href="report-problem.html" class="btn btn-primary btn-lg"><span data-icon="flag" style="width:16px;height:16px;display:inline-flex;vertical-align:-3px;"></span> Report a Problem</a>
+        <a href="my-reports.html" class="btn btn-outline btn-lg">Track My Reports</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-grid" id="citizenStats"></div>
+
+  <div style="display:grid;grid-template-columns: 1.2fr 0.9fr 0.9fr; gap:22px;" class="wrap">
+    <div class="card">
+      <div class="panel-title"><h3>My Reports</h3><a href="my-reports.html" class="btn btn-ghost btn-sm">View all</a></div>
+      <div id="myReportsPreview"></div>
+    </div>
+    <div class="card">
+      <div class="panel-title"><h3>Recent Notifications</h3><a href="notifications.html" class="btn btn-ghost btn-sm">All</a></div>
+      <div id="notifPreview" class="stack-sm"></div>
+    </div>
+    <div class="card text-center">
+      <h3 style="margin-bottom:14px;">Loop progress</h3>
+      <div class="progress-ring-wrap" id="citizenRing"></div>
+      <p id="citizenRingCaption" style="font-size:.78rem;margin-top:10px;"></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="panel-title"><h3>Community Impact <span class="badge badge-neutral" style="margin-left:8px;">Conceptual platform data</span></h3></div>
+    <div class="stat-grid">
+      <div class="stat-card"><div class="stat-label">Problems reported statewide</div><div class="stat-value"><span data-countup="1284" data-suffix="">0</span></div><div class="stat-delta">+38 this week</div></div>
+      <div class="stat-card"><div class="stat-label">Verified by government</div><div class="stat-value"><span data-countup="941" data-suffix="">0</span></div></div>
+      <div class="stat-card"><div class="stat-label">Solved and certified</div><div class="stat-value"><span data-countup="356" data-suffix="">0</span></div></div>
+      <div class="stat-card"><div class="stat-label">Districts covered</div><div class="stat-value"><span data-countup="19" data-suffix="">0</span></div><div class="stat-delta">of 24</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var s = SUI.load();
+  var stage = s.stage;
+  var mine = stage > -2 && s.problem ? 1 : 0;
+  var verified = stage >= 1 ? 1 : 0;
+  var inProgress = (stage >= 1 && stage <= 9) ? 1 : 0;
+  var solved = stage >= 11 ? 1 : 0;
+  document.getElementById("citizenStats").innerHTML =
+    '<div class="stat-card"><div class="stat-label">My Reports</div><div class="stat-value">__A__</div></div>'.replace("__A__", mine) +
+    '<div class="stat-card"><div class="stat-label">Verified</div><div class="stat-value">__B__</div></div>'.replace("__B__", verified) +
+    '<div class="stat-card"><div class="stat-label">In Progress</div><div class="stat-value">__C__</div></div>'.replace("__C__", inProgress) +
+    '<div class="stat-card"><div class="stat-label">Solved</div><div class="stat-value">__D__</div></div>'.replace("__D__", solved);
+
+  var box = document.getElementById("myReportsPreview");
+  if (!s.problem) {
+    box.innerHTML = `<div class="empty-state">
+      <div data-icon="flag"></div>
+      <h3>No reports yet</h3>
+      <p>When you spot a real problem, such as a pothole, a broken streetlight, or unsafe water, report it here first.</p>
+    </div>` +
+      '<div class="text-center"><a href="report-problem.html" class="btn btn-primary"><span data-icon="flag" style="width:16px;height:16px;display:inline-flex;vertical-align:-3px;"></span> Report your first problem</a></div>';
+  } else {
+    var info = SUI.stageInfo();
+    var label = stage === -2 ? "Needs more information" : (info ? info.label : "In progress");
+    var kind = stage === -2 ? "danger" : (stage >= 11 ? "success" : stage === 0 ? "pending" : "progress");
+    box.innerHTML = '<a href="problem-detail.html" class="card card-hover card-accent" style="display:block;text-decoration:none;color:inherit;">' +
+      '<div class="row-between"><span class="mono muted" style="font-size:.75rem;">' + s.problem.id + '</span>' +
+      '<span class="badge badge-__K__"><span class="badge-dot"></span>__L__</span>'.replace("__L__", label).replace("__K__", kind) + '</div>' +
+      '<h4 style="text-transform:none;letter-spacing:0;color:var(--ink);margin:10px 0 4px;font-size:1.02rem;">' + s.problem.title + '</h4>' +
+      '<p style="margin:0;font-size:.82rem;">' + s.problem.district + ', reported ' + SUI.timeAgo(s.problem.reportedAt) + '</p>' +
+      '</a>';
+  }
+
+  var np = document.getElementById("notifPreview");
+  var notifs = s.notifications.citizen.slice(0,3);
+  if (!notifs.length) { np.innerHTML = '<p class="muted" style="font-size:.85rem;">Nothing yet. Notifications appear as your report moves.</p>'; }
+  else {
+    np.innerHTML = notifs.map(function(n){
+      return '<div style="font-size:.82rem;padding:8px 0;border-bottom:1px solid var(--line);">' + n.text + '<div class="mono muted" style="font-size:.68rem;margin-top:3px;">' + SUI.timeAgo(n.ts) + '</div></div>';
+    }).join("");
+  }
+
+  var pct = SUI.stageProgressPct();
+  var ringInfo = SUI.stageInfo();
+  var ringLabel = !s.problem ? "Not started" : (stage === -2 ? "Needs info" : (ringInfo ? ringInfo.label : "In progress"));
+  renderProgressRing("citizenRing", pct, ringLabel);
+  document.getElementById("citizenRingCaption").textContent = !s.problem
+    ? "File a report to start the loop."
+    : (stage >= 11 ? "Loop closed. Thank you." : pct + "% of the way to a certified, deployed fix.");
+});
+</script>
+
+    </main>
+  </div>
+</div>
+<div data-call-widget data-call-label="SUI Sahayak, बोलकर बताएं"></div>
+<div class="toast-stack"></div>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/effects.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  initRoleSwitcher([{"id": "citizen", "label": "Citizen", "icon": "flag", "color": "var(--green)", "href": "citizen/dashboard.html"}, {"id": "university", "label": "University", "icon": "university", "color": "var(--navy)", "href": "university/dashboard.html"}, {"id": "industry", "label": "Industry", "icon": "factory", "color": "var(--rust)", "href": "industry/dashboard.html"}, {"id": "government", "label": "Government", "icon": "shield", "color": "var(--gold)", "href": "government/login.html"}], "citizen", "../");
+  initCommandPalette([{"label": "Home", "group": "Public", "href": "index.html", "icon": "layers", "color": "var(--ink)"}, {"label": "Impact story", "group": "Public", "href": "shared/project-impact.html", "icon": "trending", "color": "var(--ink)"}, {"label": "Citizen dashboard", "group": "Citizen", "href": "citizen/dashboard.html", "icon": "dashboard", "color": "var(--green)"}, {"label": "Report a problem", "group": "Citizen", "href": "citizen/report-problem.html", "icon": "flag", "color": "var(--green)"}, {"label": "My reports", "group": "Citizen", "href": "citizen/my-reports.html", "icon": "list", "color": "var(--green)"}, {"label": "Citizen notifications", "group": "Citizen", "href": "citizen/notifications.html", "icon": "bell", "color": "var(--green)"}, {"label": "Government command center", "group": "Government", "href": "government/dashboard.html", "icon": "dashboard", "color": "var(--gold)"}, {"label": "Verification queue", "group": "Government", "href": "government/verification-queue.html", "icon": "shield", "color": "var(--gold)"}, {"label": "Certification", "group": "Government", "href": "government/certification.html", "icon": "award", "color": "var(--gold)"}, {"label": "Impact analytics", "group": "Government", "href": "government/impact-analytics.html", "icon": "barchart", "color": "var(--gold)"}, {"label": "University dashboard", "group": "University", "href": "university/dashboard.html", "icon": "dashboard", "color": "var(--navy)"}, {"label": "Challenge marketplace", "group": "University", "href": "university/challenge-marketplace.html", "icon": "map", "color": "var(--navy)"}, {"label": "Solution builder", "group": "University", "href": "university/solution-builder.html", "icon": "layers", "color": "var(--navy)"}, {"label": "Project control", "group": "University", "href": "university/project-control.html", "icon": "trending", "color": "var(--navy)"}, {"label": "Impact ranking", "group": "University", "href": "university/impact-ranking.html", "icon": "award", "color": "var(--navy)"}, {"label": "Industry dashboard", "group": "Industry", "href": "industry/dashboard.html", "icon": "dashboard", "color": "var(--rust)"}, {"label": "Solutions marketplace", "group": "Industry", "href": "industry/solutions-marketplace.html", "icon": "map", "color": "var(--rust)"}, {"label": "CSR opportunities", "group": "Industry", "href": "industry/csr-opportunities.html", "icon": "handshake", "color": "var(--rust)"}, {"label": "My projects", "group": "Industry", "href": "industry/my-projects.html", "icon": "briefcase", "color": "var(--rust)"}], "../");
+});
+</script>
+
+</body>
+</html>

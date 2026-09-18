@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who are you? | SUI</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/components.css">
+
+</head>
+<body data-depth="0">
+
+<header class="public-header">
+  <div class="container">
+    <a href="index.html" class="brand-mark">
+      <img src="assets/sui-logo.png" alt="SUI">
+      <div><div class="bm-word">SUI</div><div class="bm-sub">Societal Innovation Interface</div></div>
+    </a>
+    <div class="header-links">
+      <a href="#loop">How it works</a>
+      <a href="#roles">Who are you?</a>
+      <a href="shared/project-impact.html">Impact story</a>
+      <a class="btn btn-outline btn-sm" href="government/login.html"><span data-icon="shield" style="width:16px;height:16px;display:inline-flex;vertical-align:-3px;"></span> Government portal</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero-public">
+  <div class="hero-aurora" aria-hidden="true"></div>
+  <canvas class="thread-canvas" id="threadCanvas" aria-hidden="true"></canvas>
+  <div class="container">
+    <div class="hero-inner">
+      <h1>Real problems become <span class="hi">deployed, measured</span> solutions.</h1>
+      <p class="lede">SUI routes citizen-identified societal challenges to the universities best matched to solve them, then carries the work through industry funding to government-certified, deployed impact.</p>
+      <p class="devanagari-line">गाँव से समाज, विश्वविद्यालय से ज्ञान, उद्योग से विकास</p>
+      <p class="hero-status" id="heroStatus">Live case <b class="mono">PS-JH-10482</b>: Persistent road pothole, Ranchi. Loading current status.</p>
+      <div class="pill-cta-row">
+        <a href="#roles" class="pill-cta pill-cta-primary" data-magnetic>Enter SUI</a>
+        <a href="shared/project-impact.html" class="pill-cta pill-cta-outline btn-outline" data-magnetic>See a completed case</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="roles" class="container" style="padding:56px 0 10px;">
+  <div class="text-center" style="max-width:600px;margin:0 auto 8px;">
+    <h2>Choose how you enter the loop.</h2>
+    <p style="margin:0 auto;">Each role gets a different dashboard, different priorities and different next actions, not the same screen with a new label.</p>
+  </div>
+  <div class="role-grid">
+    <a href="citizen/dashboard.html" class="role-card role-card--citizen" data-reveal>
+      <div class="rc-icon"><span data-icon="flag" style="width:16px;height:16px;display:inline-flex;vertical-align:-3px;"></span></div>
+      <span class="rc-tag">Report a problem</span>
+      <h3>Citizen</h3>
+      <p>Report real problems near you, track exactly what happens to your report, and confirm when it is actually fixed.</p>
+      <span class="rc-enter">Enter as Citizen <span data-icon="arrow" style="width:13px;height:13px;display:inline-flex;vertical-align:-3px;"></span></span>
+    </a>
+    <a href="university/dashboard.html" class="role-card role-card--university" data-reveal>
+      <div class="rc-icon"><span data-icon="university" style="width:16px;height:16px;display:inline-flex;vertical-align:-3px;"></span></div>
+      <span class="rc-tag">Matched to compete</span>
+      <h3>University</h3>
+      <p>Get matched to verified challenges in your field, compete institution to institution, and carry research into certified, deployed impact.</p>
+      <span class="rc-enter">Enter as University <span data-icon="arrow" style="width:13px;height:13px;display:inline-flex;vertical-align:-3px;"></span></span>
+    </a>
+    <a href="industry/dashboard.html" class="role-card role-card--industry" data-reveal>
+      <div class="rc-icon"><span data-icon="factory" style="width:16px;height:16px;display:inline-flex;vertical-align:-3px;"></span></div>
+      <span class="rc-tag">Accelerate solutions</span>
+      <h3>Industry</h3>
+      <p>Discover validated university solutions and move them from prototype to deployment with funding, technology and mentorship.</p>
+      <span class="rc-enter">Enter as Industry <span data-icon="arrow" style="width:13px;height:13px;display:inline-flex;vertical-align:-3px;"></span></span>
+    </a>
+  </div>
+  <div class="gov-strip" data-reveal>
+    <div class="gs-left">
+      <span data-icon="shield" style="width:26px;height:26px;display:inline-flex;vertical-align:-3px;"></span>
+      <div>
+        <h4>Government / Authorized Authority</h4>
+        <p>Verification, certification and statewide scaling. The governance layer, not a consumer experience.</p>
+      </div>
+    </div>
+    <a href="government/login.html" class="btn btn-outline">Official portal</a>
+  </div>
+</section>
+
+<section id="loop" class="loop-strip">
+  <div class="container">
+    <div class="text-center" style="max-width:540px;margin:0 auto 8px;">
+      <h2>One thread runs through every stakeholder.</h2>
+      <p style="margin:0 auto;">The same problem record moves through all four roles. Nobody sees a separate silo.</p>
+    </div>
+    <div class="diagram-card">
+      <svg viewBox="0 0 600 420" class="loop-svg" style="width:100%;height:auto;">
+      <path d="M 300.0 52.0 L 423.5 111.5 L 454.0 245.2 L 368.6 352.4 L 231.4 352.4 L 146.0 245.2 L 176.5 111.5 Z" class="loop-path"></path>
+      <path d="M 300.0 52.0 L 423.5 111.5 L 454.0 245.2 L 368.6 352.4 L 231.4 352.4 L 146.0 245.2 L 176.5 111.5 Z" class="loop-path-active"></path>
+      <g>
+        <circle cx="300" cy="210" r="46" fill="var(--ink)"/>
+        <text x="300" y="206" text-anchor="middle" fill="var(--cream)" font-family="var(--font-display)" font-weight="700" font-size="15">SUI</text>
+        <text x="300" y="223" text-anchor="middle" fill="var(--gold)" font-size="8.5" letter-spacing="1">THE LOOP</text>
+      </g>
+      
+        <g data-reveal>
+          <circle cx="300.0" cy="52.0" r="7" fill="var(--paper)" stroke="var(--rust)" stroke-width="2.5"/>
+          <circle cx="300.0" cy="52.0" r="2.6" fill="var(--rust)"/>
+          <text x="300.0" y="32.0" text-anchor="middle" class="loop-node-label">1. Citizen identifies</text>
+          <text x="300.0" y="45.0" text-anchor="middle" class="loop-node-sub">Reports a real problem with evidence</text>
+        </g>
+        <g data-reveal>
+          <circle cx="423.5" cy="111.5" r="7" fill="var(--paper)" stroke="var(--rust)" stroke-width="2.5"/>
+          <circle cx="423.5" cy="111.5" r="2.6" fill="var(--rust)"/>
+          <text x="441.5" y="91.5" text-anchor="start" class="loop-node-label">2. Govt. verifies</text>
+          <text x="441.5" y="104.5" text-anchor="start" class="loop-node-sub">Human review confirms it is genuine</text>
+        </g>
+        <g data-reveal>
+          <circle cx="454.0" cy="245.2" r="7" fill="var(--paper)" stroke="var(--rust)" stroke-width="2.5"/>
+          <circle cx="454.0" cy="245.2" r="2.6" fill="var(--rust)"/>
+          <text x="472.0" y="279.2" text-anchor="start" class="loop-node-label">3. Universities compete</text>
+          <text x="472.0" y="292.2" text-anchor="start" class="loop-node-sub">Matched institutions submit rival solutions</text>
+        </g>
+        <g data-reveal>
+          <circle cx="368.6" cy="352.4" r="7" fill="var(--paper)" stroke="var(--rust)" stroke-width="2.5"/>
+          <circle cx="368.6" cy="352.4" r="2.6" fill="var(--rust)"/>
+          <text x="386.6" y="386.4" text-anchor="start" class="loop-node-label">4. Best solution selected</text>
+          <text x="386.6" y="399.4" text-anchor="start" class="loop-node-sub">Evaluated on feasibility and impact</text>
+        </g>
+        <g data-reveal>
+          <circle cx="231.4" cy="352.4" r="7" fill="var(--paper)" stroke="var(--rust)" stroke-width="2.5"/>
+          <circle cx="231.4" cy="352.4" r="2.6" fill="var(--rust)"/>
+          <text x="213.4" y="386.4" text-anchor="end" class="loop-node-label">5. Industry accelerates</text>
+          <text x="213.4" y="399.4" text-anchor="end" class="loop-node-sub">Funding, technology and mentorship committed</text>
+        </g>
+        <g data-reveal>
+          <circle cx="146.0" cy="245.2" r="7" fill="var(--paper)" stroke="var(--rust)" stroke-width="2.5"/>
+          <circle cx="146.0" cy="245.2" r="2.6" fill="var(--rust)"/>
+          <text x="128.0" y="279.2" text-anchor="end" class="loop-node-label">6. Pilot and certify</text>
+          <text x="128.0" y="292.2" text-anchor="end" class="loop-node-sub">Government reviews real world results</text>
+        </g>
+        <g data-reveal>
+          <circle cx="176.5" cy="111.5" r="7" fill="var(--paper)" stroke="var(--rust)" stroke-width="2.5"/>
+          <circle cx="176.5" cy="111.5" r="2.6" fill="var(--rust)"/>
+          <text x="158.5" y="91.5" text-anchor="end" class="loop-node-label">7. Deployed and validated</text>
+          <text x="158.5" y="104.5" text-anchor="end" class="loop-node-sub">The citizen who filed it confirms the outcome</text>
+        </g>
+    </svg>
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding:10px 0 60px;">
+  <div class="text-center" style="max-width:540px;margin:0 auto 24px;">
+    <h2>What each side actually gets.</h2>
+    <p style="margin:0 auto;">Drag, scroll, or flick through: four stakeholders, one shared record.</p>
+  </div>
+  <div class="momentum-viewport">
+    <div class="momentum-track" id="stakeTrack">
+    <div class="stake-card">
+      <div class="sc-icon" style="background:var(--green);"><span data-icon="flag" style="width:20px;height:20px;display:inline-flex;vertical-align:-3px;"></span></div>
+      <h4>Citizens</h4>
+      <p style="font-size:.85rem;margin-bottom:10px;">My voice becomes a solution.</p>
+      <ul><li>Problem registration and tracking</li><li>Notifications at every stage</li><li>Confirm whether the fix actually worked</li><li>Visible community impact</li></ul>
+    </div>
+    <div class="stake-card">
+      <div class="sc-icon" style="background:var(--navy);"><span data-icon="university" style="width:20px;height:20px;display:inline-flex;vertical-align:-3px;"></span></div>
+      <h4>Universities</h4>
+      <p style="font-size:.85rem;margin-bottom:10px;">Real projects, real recognition.</p>
+      <ul><li>Matched, government-verified challenges</li><li>Public institutional impact profile</li><li>Government certification and IP rights</li><li>Industry partnerships and rankings</li></ul>
+    </div>
+    <div class="stake-card">
+      <div class="sc-icon" style="background:var(--rust);"><span data-icon="factory" style="width:20px;height:20px;display:inline-flex;vertical-align:-3px;"></span></div>
+      <h4>Industry</h4>
+      <p style="font-size:.85rem;margin-bottom:10px;">Fund it, brand it, discover it.</p>
+      <ul><li>Verified, audit-ready CSR impact</li><li>Government-recognized partner status</li><li>First look at university IP and prototypes</li><li>Talent and innovation pipeline</li></ul>
+    </div>
+    <div class="stake-card">
+      <div class="sc-icon" style="background:var(--gold);"><span data-icon="shield" style="width:20px;height:20px;display:inline-flex;vertical-align:-3px;"></span></div>
+      <h4>Government</h4>
+      <p style="font-size:.85rem;margin-bottom:10px;">See it, verify it, scale it.</p>
+      <ul><li>Statewide problem intelligence</li><li>Which universities can solve what</li><li>Live project and pilot monitoring</li><li>District-level impact analytics</li></ul>
+    </div></div>
+  </div>
+  <p class="momentum-hint">Scroll or drag sideways</p>
+</section>
+
+<footer class="cinematic-footer">
+  <div class="footer-aurora" aria-hidden="true"></div>
+  <div class="footer-giant devanagari" aria-hidden="true">साई</div>
+  <div class="container">
+    <div class="cf-inner">
+      <h2>Follow PS-JH-10482 end to end.</h2>
+      <div class="cf-pill-row">
+        <a href="citizen/report-problem.html" class="cf-pill cf-pill-primary" data-magnetic>Start as Citizen</a>
+        <a href="shared/project-impact.html" class="cf-pill" data-magnetic>Read the impact story</a>
+        <a href="government/login.html" class="cf-pill" data-magnetic>Government portal</a>
+      </div>
+    </div>
+    <div class="cf-bottom">
+      <span class="mono">SUI, Societal Innovation Interface</span>
+      <span>Built for Government of Jharkhand, Problem Statement 26043</span>
+      <span>Conceptual platform data throughout</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast-stack"></div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/effects.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  initCommandPalette([{"label": "Home", "group": "Public", "href": "index.html", "icon": "layers", "color": "var(--ink)"}, {"label": "Impact story", "group": "Public", "href": "shared/project-impact.html", "icon": "trending", "color": "var(--ink)"}, {"label": "Citizen dashboard", "group": "Citizen", "href": "citizen/dashboard.html", "icon": "dashboard", "color": "var(--green)"}, {"label": "Report a problem", "group": "Citizen", "href": "citizen/report-problem.html", "icon": "flag", "color": "var(--green)"}, {"label": "My reports", "group": "Citizen", "href": "citizen/my-reports.html", "icon": "list", "color": "var(--green)"}, {"label": "Citizen notifications", "group": "Citizen", "href": "citizen/notifications.html", "icon": "bell", "color": "var(--green)"}, {"label": "Government command center", "group": "Government", "href": "government/dashboard.html", "icon": "dashboard", "color": "var(--gold)"}, {"label": "Verification queue", "group": "Government", "href": "government/verification-queue.html", "icon": "shield", "color": "var(--gold)"}, {"label": "Certification", "group": "Government", "href": "government/certification.html", "icon": "award", "color": "var(--gold)"}, {"label": "Impact analytics", "group": "Government", "href": "government/impact-analytics.html", "icon": "barchart", "color": "var(--gold)"}, {"label": "University dashboard", "group": "University", "href": "university/dashboard.html", "icon": "dashboard", "color": "var(--navy)"}, {"label": "Challenge marketplace", "group": "University", "href": "university/challenge-marketplace.html", "icon": "map", "color": "var(--navy)"}, {"label": "Solution builder", "group": "University", "href": "university/solution-builder.html", "icon": "layers", "color": "var(--navy)"}, {"label": "Project control", "group": "University", "href": "university/project-control.html", "icon": "trending", "color": "var(--navy)"}, {"label": "Impact ranking", "group": "University", "href": "university/impact-ranking.html", "icon": "award", "color": "var(--navy)"}, {"label": "Industry dashboard", "group": "Industry", "href": "industry/dashboard.html", "icon": "dashboard", "color": "var(--rust)"}, {"label": "Solutions marketplace", "group": "Industry", "href": "industry/solutions-marketplace.html", "icon": "map", "color": "var(--rust)"}, {"label": "CSR opportunities", "group": "Industry", "href": "industry/csr-opportunities.html", "icon": "handshake", "color": "var(--rust)"}, {"label": "My projects", "group": "Industry", "href": "industry/my-projects.html", "icon": "briefcase", "color": "var(--rust)"}], "");
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var info = SUI.stageInfo();
+  var stage = SUI.stage();
+  var txt = info ? info.label : (stage === -2 ? "needs more information" : "awaiting its first report");
+  document.getElementById("heroStatus").innerHTML =
+    'Live case <b class="mono">PS-JH-10482</b>: Persistent road pothole, Ranchi. Currently <b>' + txt + '</b>.';
+  initThreadReveal("threadCanvas");
+  initMagnetic("[data-magnetic]");
+  initMomentumScroller("stakeTrack");
+});
+</script>
+</body>
+</html>

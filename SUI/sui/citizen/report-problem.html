@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report a Problem | SUI</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+
+</head>
+<body data-role="citizen" data-depth="1">
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/sui-logo.png" alt="SUI">
+      <div>
+        <div class="brand-word">SUI</div>
+        <div class="brand-sub">Societal Innovation<br>Interface</div>
+      </div>
+    </div>
+    <div class="role-switcher" id="roleSwitcher"></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class=""><span data-icon="dashboard"></span><span>Dashboard</span></a>
+<a href="report-problem.html" class="active"><span data-icon="flag"></span><span>Report a Problem</span></a>
+<a href="my-reports.html" class=""><span data-icon="list"></span><span>My Reports</span></a>
+<a href="notifications.html" class=""><span data-icon="bell"></span><span>Notifications</span></a>
+    </nav>
+    <div class="sidebar-foot">
+      <button class="switch-role-btn" data-cmdk-open type="button" style="margin-bottom:8px;"><span data-icon="search" style="width:13px;height:13px;"></span> Jump to a page (Ctrl K)</button>
+      <button class="switch-role-btn" data-reset-demo type="button"><span data-icon="clock" style="width:13px;height:13px;"></span> Reload example data</button>
+      <button class="switch-role-btn" data-reset-blank type="button" style="margin-top:6px;opacity:.7;font-size:.72rem;"><span data-icon="flag" style="width:12px;height:12px;"></span> Start from a blank slate</button>
+    </div>
+  </aside>
+  <div class="main-col">
+    <header class="topbar">
+      <div class="row gap-sm">
+        <button class="menu-toggle"></button>
+        <div class="topbar-title">
+          <span class="t-eyebrow">Citizen Portal</span>
+          <h1>Report a Problem</h1>
+        </div>
+      </div>
+      <div class="row gap-sm">
+        
+        <button class="cmdk-trigger" data-cmdk-open type="button"><span data-icon="search" style="width:14px;height:14px;"></span><span class="cmdk-label">Search</span><kbd>Ctrl K</kbd></button>
+        <a href="notifications.html" class="icon-btn" data-notif-role="citizen" style="text-decoration:none;"><span class="dot" style="display:none;"></span><span data-icon="bell"></span></a>
+        <div class="icon-btn" title="Reporting as: Meera Oraon" style="width:auto;border-radius:999px;padding:0 14px;gap:8px;font-size:.78rem;font-weight:700;">
+          <span data-icon="flag" style="width:15px;height:15px;"></span> Meera Oraon
+        </div>
+      </div>
+    </header>
+    
+    <main class="content">
+      
+<div class="content-narrow">
+  <div id="alreadyActive" class="card card-accent hidden" style="margin-bottom:22px;border-left-color:var(--gold);">
+    <div class="row gap-sm"><span data-icon="alert" style="color:var(--gold-dark);width:22px;height:22px;flex-shrink:0;"></span>
+    <div><h4 style="text-transform:none;letter-spacing:0;color:var(--ink);margin:0 0 4px;">This demo already has an active report</h4>
+    <p style="margin:0;font-size:.85rem;">SUI's live walkthrough tracks one shared record at a time. <a href="problem-detail.html" style="color:var(--accent-dark);font-weight:600;">View it</a>, or start a blank slate to file a new one.</p></div></div>
+    <button class="btn btn-outline btn-sm" data-reset-blank style="margin-top:14px;">Start blank and report a new problem</button>
+  </div>
+
+  <form id="reportForm">
+    <h2>Tell us what is wrong.</h2>
+    <div class="form-progress"><span class="done"></span><span></span><span></span></div>
+
+    <div class="field">
+      <label>What happened</label>
+      <input type="text" id="f_title" value="Persistent road pothole on Kanke Road" required>
+    </div>
+
+    <div class="field">
+      <label>Category</label>
+      <div class="radio-cards" id="f_category">
+        <label class="radio-card selected" data-val="Urban Infrastructure"><input type="radio" name="cat"><span data-icon="building" style="margin:0 auto 8px;"></span><span>Urban Infra.</span></label>
+        <label class="radio-card" data-val="Agriculture &amp; Water"><input type="radio" name="cat"><span data-icon="map" style="margin:0 auto 8px;"></span><span>Agri. &amp; Water</span></label>
+        <label class="radio-card" data-val="Healthcare"><input type="radio" name="cat"><span data-icon="users" style="margin:0 auto 8px;"></span><span>Healthcare</span></label>
+        <label class="radio-card" data-val="Education"><input type="radio" name="cat"><span data-icon="award" style="margin:0 auto 8px;"></span><span>Education</span></label>
+        <label class="radio-card" data-val="Environment"><input type="radio" name="cat"><span data-icon="layers" style="margin:0 auto 8px;"></span><span>Environment</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Severity</label>
+      <div class="radio-cards" id="f_severity">
+        <label class="radio-card" data-val="Low"><input type="radio" name="sev"><span>Low</span></label>
+        <label class="radio-card selected" data-val="High"><input type="radio" name="sev"><span>High</span></label>
+        <label class="radio-card" data-val="Critical"><input type="radio" name="sev"><span>Critical</span></label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Description</label>
+      <textarea id="f_desc" rows="4">A large, deepening pothole on the main carriageway near the Kanke Road junction is causing traffic slowdowns and a rising number of two wheeler accidents, especially after monsoon rain pools inside it.</textarea>
+    </div>
+
+    <div class="field">
+      <label>Evidence</label>
+      <div class="dropzone" id="dropzone"><span data-icon="camera" style="width:22px;height:22px;display:inline-flex;vertical-align:-3px;"></span><div style="margin-top:8px;">Tap to add a photo (simulated in this prototype)</div></div>
+    </div>
+
+    <div class="field">
+      <label>Location</label>
+      <button type="button" class="btn btn-outline btn-block" id="geoBtn"><span data-icon="map" style="width:15px;height:15px;display:inline-flex;vertical-align:-3px;"></span> Use my current location</button>
+      <p id="geoResult" style="font-size:.78rem;margin-top:8px;"></p>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit report</button>
+  </form>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var s = SUI.load();
+  if (s.problem && s.stage > -2) {
+    document.getElementById("alreadyActive").classList.remove("hidden");
+    document.getElementById("reportForm").classList.add("hidden");
+  }
+
+  document.querySelectorAll(".radio-card").forEach(function(card){
+    card.addEventListener("click", function(){
+      var group = card.closest(".radio-cards");
+      group.querySelectorAll(".radio-card").forEach(function(c){ c.classList.remove("selected"); });
+      card.classList.add("selected");
+    });
+  });
+
+  document.getElementById("geoBtn").addEventListener("click", function(){
+    var done = function(text){ document.getElementById("geoResult").textContent = text; };
+    if (!navigator.geolocation) { done("Location captured (23.350, 85.330), near Kanke Road, Ranchi"); return; }
+    navigator.geolocation.getCurrentPosition(function(pos){
+      done("Location captured (" + pos.coords.latitude.toFixed(3) + ", " + pos.coords.longitude.toFixed(3) + "), near Kanke Road, Ranchi");
+    }, function(){
+      done("Location captured (23.350, 85.330), near Kanke Road, Ranchi");
+    });
+  });
+
+  document.getElementById("reportForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var cat = document.querySelector("#f_category .selected").getAttribute("data-val");
+    var sev = document.querySelector("#f_severity .selected").getAttribute("data-val");
+    SUI.submitProblem({
+      title: document.getElementById("f_title").value || "Persistent road pothole",
+      category: cat, severity: sev,
+      description: document.getElementById("f_desc").value,
+      citizenName: "Meera Oraon"
+    });
+    window.location.href = "report-submitted.html";
+  });
+});
+</script>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-stack"></div>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/effects.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  initRoleSwitcher([{"id": "citizen", "label": "Citizen", "icon": "flag", "color": "var(--green)", "href": "citizen/dashboard.html"}, {"id": "university", "label": "University", "icon": "university", "color": "var(--navy)", "href": "university/dashboard.html"}, {"id": "industry", "label": "Industry", "icon": "factory", "color": "var(--rust)", "href": "industry/dashboard.html"}, {"id": "government", "label": "Government", "icon": "shield", "color": "var(--gold)", "href": "government/login.html"}], "citizen", "../");
+  initCommandPalette([{"label": "Home", "group": "Public", "href": "index.html", "icon": "layers", "color": "var(--ink)"}, {"label": "Impact story", "group": "Public", "href": "shared/project-impact.html", "icon": "trending", "color": "var(--ink)"}, {"label": "Citizen dashboard", "group": "Citizen", "href": "citizen/dashboard.html", "icon": "dashboard", "color": "var(--green)"}, {"label": "Report a problem", "group": "Citizen", "href": "citizen/report-problem.html", "icon": "flag", "color": "var(--green)"}, {"label": "My reports", "group": "Citizen", "href": "citizen/my-reports.html", "icon": "list", "color": "var(--green)"}, {"label": "Citizen notifications", "group": "Citizen", "href": "citizen/notifications.html", "icon": "bell", "color": "var(--green)"}, {"label": "Government command center", "group": "Government", "href": "government/dashboard.html", "icon": "dashboard", "color": "var(--gold)"}, {"label": "Verification queue", "group": "Government", "href": "government/verification-queue.html", "icon": "shield", "color": "var(--gold)"}, {"label": "Certification", "group": "Government", "href": "government/certification.html", "icon": "award", "color": "var(--gold)"}, {"label": "Impact analytics", "group": "Government", "href": "government/impact-analytics.html", "icon": "barchart", "color": "var(--gold)"}, {"label": "University dashboard", "group": "University", "href": "university/dashboard.html", "icon": "dashboard", "color": "var(--navy)"}, {"label": "Challenge marketplace", "group": "University", "href": "university/challenge-marketplace.html", "icon": "map", "color": "var(--navy)"}, {"label": "Solution builder", "group": "University", "href": "university/solution-builder.html", "icon": "layers", "color": "var(--navy)"}, {"label": "Project control", "group": "University", "href": "university/project-control.html", "icon": "trending", "color": "var(--navy)"}, {"label": "Impact ranking", "group": "University", "href": "university/impact-ranking.html", "icon": "award", "color": "var(--navy)"}, {"label": "Industry dashboard", "group": "Industry", "href": "industry/dashboard.html", "icon": "dashboard", "color": "var(--rust)"}, {"label": "Solutions marketplace", "group": "Industry", "href": "industry/solutions-marketplace.html", "icon": "map", "color": "var(--rust)"}, {"label": "CSR opportunities", "group": "Industry", "href": "industry/csr-opportunities.html", "icon": "handshake", "color": "var(--rust)"}, {"label": "My projects", "group": "Industry", "href": "industry/my-projects.html", "icon": "briefcase", "color": "var(--rust)"}], "../");
+});
+</script>
+
+</body>
+</html>

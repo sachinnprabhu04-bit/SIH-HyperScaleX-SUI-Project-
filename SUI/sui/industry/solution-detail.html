@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solution Detail | SUI</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+
+</head>
+<body data-role="industry" data-depth="1">
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/sui-logo.png" alt="SUI">
+      <div>
+        <div class="brand-word">SUI</div>
+        <div class="brand-sub">Societal Innovation<br>Interface</div>
+      </div>
+    </div>
+    <div class="role-switcher" id="roleSwitcher"></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class=""><span data-icon="dashboard"></span><span>Dashboard</span></a>
+<a href="solutions-marketplace.html" class="active"><span data-icon="map"></span><span>Solutions Marketplace</span></a>
+<a href="csr-opportunities.html" class=""><span data-icon="handshake"></span><span>CSR Opportunities</span></a>
+<a href="my-projects.html" class=""><span data-icon="briefcase"></span><span>My Projects</span></a>
+    </nav>
+    <div class="sidebar-foot">
+      <button class="switch-role-btn" data-cmdk-open type="button" style="margin-bottom:8px;"><span data-icon="search" style="width:13px;height:13px;"></span> Jump to a page (Ctrl K)</button>
+      <button class="switch-role-btn" data-reset-demo type="button"><span data-icon="clock" style="width:13px;height:13px;"></span> Reload example data</button>
+      <button class="switch-role-btn" data-reset-blank type="button" style="margin-top:6px;opacity:.7;font-size:.72rem;"><span data-icon="flag" style="width:12px;height:12px;"></span> Start from a blank slate</button>
+    </div>
+  </aside>
+  <div class="main-col">
+    <header class="topbar">
+      <div class="row gap-sm">
+        <button class="menu-toggle"></button>
+        <div class="topbar-title">
+          <span class="t-eyebrow">Industry Portal</span>
+          <h1>Solution Detail</h1>
+        </div>
+      </div>
+      <div class="row gap-sm">
+        
+        <button class="cmdk-trigger" data-cmdk-open type="button"><span data-icon="search" style="width:14px;height:14px;"></span><span class="cmdk-label">Search</span><kbd>Ctrl K</kbd></button>
+        <button class="icon-btn" data-open-modal="notifPanelOverlay" data-notif-role="industry" type="button"><span class="dot" style="display:none;"></span><span data-icon="bell"></span></button>
+        <div class="icon-btn" title="Representing: Tata Steel Foundation" style="width:auto;border-radius:999px;padding:0 14px;gap:8px;font-size:.78rem;font-weight:700;">
+          <span data-icon="factory" style="width:15px;height:15px;"></span> Tata Steel Foundation
+        </div>
+      </div>
+    </header>
+    <div class="overlay" id="notifPanelOverlay">
+      <div class="modal" style="max-width:400px;">
+        <button class="modal-close" data-close-modal><span data-icon="close"></span></button>
+        <div class="eyebrow">Industry Portal</div>
+        <h3 style="margin-bottom:16px;">Notifications</h3>
+        <div id="notifPanelList" class="stack-sm" data-notif-list="industry" style="max-height:360px;overflow-y:auto;"></div>
+      </div>
+    </div>
+    <main class="content">
+      
+<div id="noSol" class="hidden"><div class="empty-state">
+      <div data-icon="factory"></div>
+      <h3>Nothing to accelerate yet</h3>
+      <p>Validated university solutions will appear here.</p>
+    </div></div>
+<div id="solBody" class="hidden" style="display:grid;grid-template-columns:1.4fr 1fr;gap:22px;">
+  <div class="stack-md">
+    <div class="card">
+      <span class="mono muted" style="font-size:.78rem;" id="spid"></span>
+      <h2 id="stitle" style="margin:8px 0 10px;"></h2>
+      <p id="sdesc"></p>
+      <p style="font-size:.85rem;"><b>Developed by</b> <span id="suniv"></span></p>
+    </div>
+    <div id="commitCard" class="card">
+      <div class="panel-title"><h3>Commit CSR support</h3></div>
+      <div class="field"><label>Support type</label>
+        <div class="radio-cards">
+          <label class="radio-card selected" data-val="Funding"><input type="checkbox" checked><span>Funding</span></label>
+          <label class="radio-card" data-val="Materials"><input type="checkbox"><span>Materials</span></label>
+          <label class="radio-card" data-val="Mentorship"><input type="checkbox"><span>Mentorship</span></label>
+        </div>
+      </div>
+      <div class="field"><label>Amount</label><input type="text" id="amount" value="6,50,000"></div>
+      <button class="btn btn-primary" id="commitBtn">Commit CSR support</button>
+    </div>
+    <div id="committedNote" class="card card-accent hidden" style="border-left-color:var(--green);">
+      <span data-icon="check" style="width:18px;height:18px;display:inline-flex;vertical-align:-3px;"></span> Funding confirmed. <span id="committedText"></span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="panel-title"><h3>Progress</h3></div>
+    <div class="stitch-track"><div class="stepper" id="stepperMount"></div></div>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var s = SUI.load();
+  if (s.stage < 5) { document.getElementById("noSol").classList.remove("hidden"); return; }
+  document.getElementById("solBody").classList.remove("hidden");
+  document.getElementById("spid").textContent = s.problem.id;
+  document.getElementById("stitle").textContent = s.problem.title;
+  document.getElementById("sdesc").textContent = s.problem.description || "";
+  document.getElementById("suniv").textContent = s.selectedUniversity;
+  renderStepper("stepperMount");
+
+  document.querySelectorAll(".radio-card").forEach(function(card){
+    card.addEventListener("click", function(){ card.classList.toggle("selected"); });
+  });
+
+  if (s.funding) {
+    document.getElementById("commitCard").classList.add("hidden");
+    document.getElementById("committedNote").classList.remove("hidden");
+    document.getElementById("committedText").textContent = s.funding.partner + " committed " + s.funding.amount + ".";
+  }
+
+  document.getElementById("commitBtn").addEventListener("click", function(){
+    var types = [];
+    document.querySelectorAll(".radio-card.selected").forEach(function(c){ types.push(c.getAttribute("data-val")); });
+    SUI.commitFunding({ partner: "Tata Steel Foundation", types: types, amount: "Rs. " + document.getElementById("amount").value });
+    toast("CSR support committed. The university has been notified.", "success");
+    setTimeout(function(){ location.reload(); }, 700);
+  });
+});
+</script>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast-stack"></div>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/effects.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  initRoleSwitcher([{"id": "citizen", "label": "Citizen", "icon": "flag", "color": "var(--green)", "href": "citizen/dashboard.html"}, {"id": "university", "label": "University", "icon": "university", "color": "var(--navy)", "href": "university/dashboard.html"}, {"id": "industry", "label": "Industry", "icon": "factory", "color": "var(--rust)", "href": "industry/dashboard.html"}, {"id": "government", "label": "Government", "icon": "shield", "color": "var(--gold)", "href": "government/login.html"}], "industry", "../");
+  initCommandPalette([{"label": "Home", "group": "Public", "href": "index.html", "icon": "layers", "color": "var(--ink)"}, {"label": "Impact story", "group": "Public", "href": "shared/project-impact.html", "icon": "trending", "color": "var(--ink)"}, {"label": "Citizen dashboard", "group": "Citizen", "href": "citizen/dashboard.html", "icon": "dashboard", "color": "var(--green)"}, {"label": "Report a problem", "group": "Citizen", "href": "citizen/report-problem.html", "icon": "flag", "color": "var(--green)"}, {"label": "My reports", "group": "Citizen", "href": "citizen/my-reports.html", "icon": "list", "color": "var(--green)"}, {"label": "Citizen notifications", "group": "Citizen", "href": "citizen/notifications.html", "icon": "bell", "color": "var(--green)"}, {"label": "Government command center", "group": "Government", "href": "government/dashboard.html", "icon": "dashboard", "color": "var(--gold)"}, {"label": "Verification queue", "group": "Government", "href": "government/verification-queue.html", "icon": "shield", "color": "var(--gold)"}, {"label": "Certification", "group": "Government", "href": "government/certification.html", "icon": "award", "color": "var(--gold)"}, {"label": "Impact analytics", "group": "Government", "href": "government/impact-analytics.html", "icon": "barchart", "color": "var(--gold)"}, {"label": "University dashboard", "group": "University", "href": "university/dashboard.html", "icon": "dashboard", "color": "var(--navy)"}, {"label": "Challenge marketplace", "group": "University", "href": "university/challenge-marketplace.html", "icon": "map", "color": "var(--navy)"}, {"label": "Solution builder", "group": "University", "href": "university/solution-builder.html", "icon": "layers", "color": "var(--navy)"}, {"label": "Project control", "group": "University", "href": "university/project-control.html", "icon": "trending", "color": "var(--navy)"}, {"label": "Impact ranking", "group": "University", "href": "university/impact-ranking.html", "icon": "award", "color": "var(--navy)"}, {"label": "Industry dashboard", "group": "Industry", "href": "industry/dashboard.html", "icon": "dashboard", "color": "var(--rust)"}, {"label": "Solutions marketplace", "group": "Industry", "href": "industry/solutions-marketplace.html", "icon": "map", "color": "var(--rust)"}, {"label": "CSR opportunities", "group": "Industry", "href": "industry/csr-opportunities.html", "icon": "handshake", "color": "var(--rust)"}, {"label": "My projects", "group": "Industry", "href": "industry/my-projects.html", "icon": "briefcase", "color": "var(--rust)"}], "../");
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact Story | SUI</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/components.css">
+
+</head>
+<body data-depth="1">
+
+<header class="public-header">
+  <div class="container">
+    <a href="../index.html" class="brand-mark">
+      <img src="../assets/sui-logo.png" alt="SUI">
+      <div><div class="bm-word">SUI</div><div class="bm-sub">Societal Innovation Interface</div></div>
+    </a>
+    <div class="header-links">
+      <a href="../index.html">Home</a>
+    </div>
+  </div>
+</header>
+
+<section class="container" style="padding:56px 0;">
+  <div class="content-narrow text-center">
+    <h1 id="heroTitle">Persistent Road Pothole</h1>
+    <p class="mono muted" id="heroMeta" style="font-size:.82rem;"></p>
+    <div id="statusNotice" class="card card-accent hidden" style="text-align:left;margin-top:20px;"></div>
+  </div>
+
+  <div class="card" style="max-width:760px;margin:30px auto 0;">
+    <div class="stitch-track"><div class="stepper" id="stepperMount"></div></div>
+  </div>
+
+  <div class="stat-grid" style="max-width:900px;margin:34px auto 0;">
+    <div class="card text-center"><div data-icon="flag" style="width:22px;height:22px;color:var(--green);margin:0 auto 10px;"></div><h4 style="text-transform:none;letter-spacing:0;color:var(--ink);font-size:.95rem;">Citizen</h4><p id="citizenText" style="font-size:.8rem;"></p></div>
+    <div class="card text-center"><div data-icon="shield" style="width:22px;height:22px;color:var(--gold-dark);margin:0 auto 10px;"></div><h4 style="text-transform:none;letter-spacing:0;color:var(--ink);font-size:.95rem;">Government</h4><p id="govText" style="font-size:.8rem;"></p></div>
+    <div class="card text-center"><div data-icon="university" style="width:22px;height:22px;color:var(--navy);margin:0 auto 10px;"></div><h4 style="text-transform:none;letter-spacing:0;color:var(--ink);font-size:.95rem;">University</h4><p id="uniText" style="font-size:.8rem;"></p></div>
+    <div class="card text-center"><div data-icon="factory" style="width:22px;height:22px;color:var(--rust);margin:0 auto 10px;"></div><h4 style="text-transform:none;letter-spacing:0;color:var(--ink);font-size:.95rem;">Industry</h4><p id="indText" style="font-size:.8rem;"></p></div>
+  </div>
+
+  <div class="text-center" style="margin-top:40px;">
+    <p style="margin-bottom:16px;">Enter any portal to see this case from that side.</p>
+    <div class="row gap-sm" style="justify-content:center;flex-wrap:wrap;">
+      <a href="../citizen/dashboard.html" class="btn btn-outline">Citizen</a>
+      <a href="../university/dashboard.html" class="btn btn-outline">University</a>
+      <a href="../industry/dashboard.html" class="btn btn-outline">Industry</a>
+      <a href="../government/login.html" class="btn btn-outline">Government</a>
+    </div>
+  </div>
+</section>
+
+<div class="toast-stack"></div>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/effects.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  initCommandPalette([{"label": "Home", "group": "Public", "href": "index.html", "icon": "layers", "color": "var(--ink)"}, {"label": "Impact story", "group": "Public", "href": "shared/project-impact.html", "icon": "trending", "color": "var(--ink)"}, {"label": "Citizen dashboard", "group": "Citizen", "href": "citizen/dashboard.html", "icon": "dashboard", "color": "var(--green)"}, {"label": "Report a problem", "group": "Citizen", "href": "citizen/report-problem.html", "icon": "flag", "color": "var(--green)"}, {"label": "My reports", "group": "Citizen", "href": "citizen/my-reports.html", "icon": "list", "color": "var(--green)"}, {"label": "Citizen notifications", "group": "Citizen", "href": "citizen/notifications.html", "icon": "bell", "color": "var(--green)"}, {"label": "Government command center", "group": "Government", "href": "government/dashboard.html", "icon": "dashboard", "color": "var(--gold)"}, {"label": "Verification queue", "group": "Government", "href": "government/verification-queue.html", "icon": "shield", "color": "var(--gold)"}, {"label": "Certification", "group": "Government", "href": "government/certification.html", "icon": "award", "color": "var(--gold)"}, {"label": "Impact analytics", "group": "Government", "href": "government/impact-analytics.html", "icon": "barchart", "color": "var(--gold)"}, {"label": "University dashboard", "group": "University", "href": "university/dashboard.html", "icon": "dashboard", "color": "var(--navy)"}, {"label": "Challenge marketplace", "group": "University", "href": "university/challenge-marketplace.html", "icon": "map", "color": "var(--navy)"}, {"label": "Solution builder", "group": "University", "href": "university/solution-builder.html", "icon": "layers", "color": "var(--navy)"}, {"label": "Project control", "group": "University", "href": "university/project-control.html", "icon": "trending", "color": "var(--navy)"}, {"label": "Impact ranking", "group": "University", "href": "university/impact-ranking.html", "icon": "award", "color": "var(--navy)"}, {"label": "Industry dashboard", "group": "Industry", "href": "industry/dashboard.html", "icon": "dashboard", "color": "var(--rust)"}, {"label": "Solutions marketplace", "group": "Industry", "href": "industry/solutions-marketplace.html", "icon": "map", "color": "var(--rust)"}, {"label": "CSR opportunities", "group": "Industry", "href": "industry/csr-opportunities.html", "icon": "handshake", "color": "var(--rust)"}, {"label": "My projects", "group": "Industry", "href": "industry/my-projects.html", "icon": "briefcase", "color": "var(--rust)"}], "../");
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var s = SUI.load();
+  if (!s.problem) {
+    document.getElementById("heroTitle").textContent = "No case reported yet";
+    document.getElementById("heroMeta").textContent = "Check back once a citizen files the first report.";
+    renderStepper("stepperMount");
+    ["citizenText","govText","uniText","indText"].forEach(function(id){ document.getElementById(id).textContent = "Not yet started."; });
+    return;
+  }
+  document.getElementById("heroTitle").textContent = s.problem.title;
+  document.getElementById("heroMeta").textContent = s.problem.id + ", " + s.problem.district;
+  renderStepper("stepperMount");
+
+  var info = SUI.stageInfo();
+  if (s.stage < 11 && s.stage >= 0) {
+    var notice = document.getElementById("statusNotice");
+    notice.classList.remove("hidden");
+    notice.innerHTML = "<b>Case in progress.</b> Currently at: " + (info ? info.label : "");
+  }
+
+  document.getElementById("citizenText").textContent = "Reported " + SUI.timeAgo(s.problem.reportedAt) + (s.stage>=11 ? ", confirmed the fix worked." : ", awaiting resolution.");
+  document.getElementById("govText").textContent = s.stage >= 1 ? "Verified and published as an official challenge." : "Reviewing the report.";
+  document.getElementById("uniText").textContent = s.selectedUniversity ? s.selectedUniversity + " is building the solution." : (s.universities.length ? s.universities.length + " institutions competing." : "Awaiting a matched institution.");
+  document.getElementById("indText").textContent = s.funding ? s.funding.partner + " funded the deployment." : "Awaiting industry support.";
+});
+</script>
+</body>
+</html>
